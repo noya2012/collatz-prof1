@@ -38,8 +38,10 @@ This project is licensed under the [Apache License 2.0](LICENSE). You are free t
 ## Contact
 
 For any questions or inquiries, please reach out to the project maintainer:
-
+  JIA NING ZENG
 - [noya2012](mailto:noya2012@126.com)
+- BACKUP MAILBOX (mailto:306000250@QQ.COM)
+https://orcid.org/0000-0003-1338-9978
 
 Thank you for your interest in the 3n+1 Analysis Framework Formalization Project (Collatz Prof1)!
 ```
