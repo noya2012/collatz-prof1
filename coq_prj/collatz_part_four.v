@@ -1060,7 +1060,7 @@ Proof.
     (* 证明完成 *)
     exact H1.
 Qed.
-(*连续对话生成的定理*)
+
 Theorem value_descent : forall n r0s r1s,
   valid_input n -> n > 1 ->
   r0s > 2 * r1s ->
