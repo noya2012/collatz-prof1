@@ -2,12 +2,16 @@
 ```markdown
 # 3n+1 Analysis Framework Formalization Project (Collatz Prof1)
 
-Welcome to the 3n+1 Analysis Framework Formalization Project,  a formalization effort of the 3n+1 conjecture using the Coq proof assistant. This repository includes the ongoing work and original idea files.
-The project includes original and immature idea files, which contain various versions of doc documents. We have used Coq code to formalize and verify these ideas. The main formalization code is located in the /prj/ directory.
+Welcome to the 3n+1 Analysis Framework Formalization Project,  a formalization effort of the 3n+1 conjecture using the Coq proof assistant.
+This repository includes the ongoing work and original idea files.
+The project includes original and immature idea files, which contain various versions of doc documents.
+ We have used Coq code to formalize and verify these ideas. The main formalization code is located in the /prj/ directory.
 
 ## Overview
 
-The 3n+1 problem, also known as the Collatz conjecture, is an unsolved problem in mathematics that has captivated mathematicians and enthusiasts alike. This project aims to provide a rigorous and formalized framework for analyzing the behavior of the 3n+1 sequence, contributing to the understanding of this intriguing mathematical puzzle.
+The 3n+1 problem, also known as the Collatz conjecture, is an unsolved problem in mathematics that has captivated mathematicians and enthusiasts alike.
+ This project aims to provide a rigorous and formalized framework for analyzing the behavior of the 3n+1 sequence,
+contributing to the understanding of this intriguing mathematical puzzle.
 
 ## Getting Started
 
@@ -42,7 +46,7 @@ For any questions or inquiries, please reach out to the project maintainer:
   JIA NING ZENG
 - [noya2012](mailto:noya2012@126.com)
 - BACKUP MAILBOX (mailto:306000250@QQ.COM)
-https://orcid.org/0000-0003-1338-9978
+  orcid：0000-0003-1338-9978
 
 Thank you for your interest in the 3n+1 Analysis Framework Formalization Project (Collatz Prof1)!
 ```
