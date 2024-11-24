@@ -1,6 +1,6 @@
 
 ```markdown
-# 3n+1 Analysis Framework Formalization Project (Collatz Prof1)
+# 3n+1 Analysis Framework Formalization Project 
 
 Welcome to the 3n+1 Analysis Framework Formalization Project,  a formalization effort of the 3n+1 conjecture using the Coq proof assistant.
 This repository includes the ongoing work and original idea files.
