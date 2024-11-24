@@ -20,15 +20,7 @@ To get started with the project, follow these steps:
 3. **Compile the Project**: Navigate to the project directory and compile the Coq files using the Coq compiler.
 
 ## Directory Structure
-
-Here's an overview of the project's directory structure:
-
-- `/src`: Contains the main Coq source files.
-  - `/idea`: Original idea files and initial sketches.
-  - `/core`: Core formalizations and proofs.
-  - `/analysis`: Additional analysis and explorations.
-- `/tests`: Contains test cases and examples.
-- `/docs`: Documentation and additional resources.
+/coq_prj
 
 ## Contributing
 
