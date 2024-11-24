@@ -58,9 +58,9 @@ such as iterative functions in dynamical systems. Although the conjecture can be
 
 Based on existing original ideas, we have mainly adopted combinatorial analysis methods, using some computational tools to observe numerical sequences,
  first generating some original ideas, constructing sequences, and attempting to formalize them strictly,
-finally finding some effective paths to describe sequence properties and expand to the global context. In terms of methodology,
-we first combined the local properties of the sequence into a triangular undirected graph, then re-decomposed the undirected graph
-to obtain theorems about the properties of the sequence.
+In terms of methodology,
+we first combined the local properties of the sequence into a triangular undirected graph,
+then re-decomposed the undirected graph to obtain theorems about the properties of the sequence.
 
 ## About this research:
 
