@@ -25,7 +25,7 @@ To get started with the project, follow these steps:
 3. **Compile the Project**: Navigate to the project directory and compile the Coq files using the Coq compiler.
 
 ## Directory Structure
-/coq_prj
+/coq_prj1
 
 ## Contributing
 
