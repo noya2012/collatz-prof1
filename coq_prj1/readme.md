@@ -6,6 +6,7 @@
 ### Upper Bound Theorems
 - `superposition_bound`: Unifies the upper bound properties of three patterns.
 - `combined_sequence_bound`: Provides a unified upper bound for any valid sequence.
+- `combined_sequence_bound_optimized`: Demonstrates that the Collatz sequence, under these patterns, has controlled growth.
 - The importance of these theorems lies in their restriction of the growth range of sequences, providing a foundation for proving that sequences eventually converge.
 
 ## 2. Continuity Theorem Group
