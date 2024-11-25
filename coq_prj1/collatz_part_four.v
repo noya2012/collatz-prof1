@@ -1033,6 +1033,59 @@ Require Import Lia.
 Require Import Arith.   
 Require Import PeanoNat.
 
+(* 辅助引理：关于nth和firstn的关系 *)
+Lemma nth_firstn_helper : forall {A: Type} (l: list A) (i n: nat) (default: A),
+  i < n -> n <= length l ->
+  nth i (firstn n l) default = nth i l default.
+Proof.
+  intros A l i n default Hi Hn.
+  revert l i Hi Hn.
+  induction n as [|n' IHn'].
+  + (* n = 0 *)
+    intros l i Hi Hn.
+    inversion Hi.
+    
+  + (* n = S n' *)
+    intros l i Hi Hn.
+    destruct l as [|x l'].
+    - (* l = nil *)
+      simpl in Hn. inversion Hn.
+    - (* l = x::l' *)
+      destruct i as [|i'].
+      * (* i = 0 *)
+        simpl. reflexivity.
+      * (* i = S i' *)
+        simpl.
+        apply IHn' with (l := l').
+        -- (* i' < n' *)
+           apply Nat.succ_lt_mono in Hi. exact Hi.
+        -- (* n' <= length l' *)
+           simpl in Hn. apply le_S_n. exact Hn.
+Qed.
+
+(* 序列前缀有效性引理 *)
+Lemma sequence_prefix_validity : forall n ops i,
+  valid_sequence ops n ->
+  i <= length ops ->
+  valid_sequence (firstn i ops) n.
+Proof.
+  intros n ops i Hseq Hi j Hj.
+  
+  (* 1. 将j < length (firstn i ops) 转换为 j < i *)
+  rewrite firstn_length in Hj.
+  apply Nat.min_glb_lt_iff in Hj.
+  destruct Hj as [Hj_i Hj_len].
+  
+  (* 2. 证明nth j (firstn i ops) R0 = nth j ops R0 *)
+  assert (Heq: nth j (firstn i ops) R0 = nth j ops R0).
+  { apply nth_firstn_helper; auto. }
+  rewrite Heq.
+  
+  (* 3. 应用原序列的有效性 *)
+  apply Hseq.
+  apply Nat.lt_le_trans with i; auto.
+Qed.
+----------------------------------------------coq uncheck------------
 Lemma power_4_to_2 : forall r1s,
   4^r1s = 2^(2*r1s).
 Proof.
