@@ -1,6 +1,6 @@
 ####"To verify the proofs using Coq IDE 8.9.0, you need to start loading the code from collatz_part_one.v. This file contains all the definitions, lemmas, and main theorems of this analysis framework."
 
-# Global Theorems and Their Importance
+# Abstract of Proven Global Theorems
 
 ## 1. Core Global Theorems
 ### Upper Bound Theorems
