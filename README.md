@@ -104,9 +104,13 @@ For any questions or inquiries, please reach out to the project maintainer:
 
 Thank you for your interest in The Combinatorial Analysis Framework of the 3N + 1 Conjecture - COQ Formalization Project!
 ## Links
-Other Recommended Formalization Projects
-Fermat's Last Theorem Formalization Project https://github.com/ImperialCollegeLondon/FLT
-                                            https://gitcode.com/gh_mirrors/fl/FLT
+
+-Other Recommended Formalization Projects
+
+  Fermat's Last Theorem Formalization Project
+  1.https://github.com/ImperialCollegeLondon/FLT
+  2.https://gitcode.com/gh_mirrors/fl/FLT
+                                                      
 ```
 
 
