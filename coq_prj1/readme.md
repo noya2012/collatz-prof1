@@ -71,3 +71,98 @@
 - `sequence_descent`: For any valid input greater than 1, there exists an operation sequence that decreases the value.
 - `value_descent`: When the number of R0 operations is sufficiently greater than the number of R1 operations, the sequence value will decrease.
 - `sequence_descent` serves as the core theorem, directly supporting the argument that sequences will eventually converge to 1.
+
+-
+- Mind map
+- 
+
+# Collatz Sequence Theorems
+
+## Core Pattern Theorems
+### Binary Combinations
+- valid_binary_combination
+  - R0R1, R1R0, R0R0 forms
+  - binary_combination_completeness
+    - depends on: even_or_odd
+    - proves existence of valid combinations
+
+### Ternary Combinations
+- valid_ternary_combination
+  - R0R0R0, R0R0R1, R0R1R0, R1R0R0, R1R0R1 forms
+  - ternary_combination_completeness
+    - extends binary combinations
+    - proves existence of valid combinations
+
+## Pattern Properties
+### Value Equations
+- R0R1_value_eq
+  - form: 2 * (2^d) * n + (2^d - 2)
+- R1R0_value_eq
+  - form: 2 * (2^d) * n + (2^d - 1)
+- R0R0_value_eq
+  - form: n * (2^d)
+  - depends on: pow2_gt_0
+
+### Pattern Bounds
+- pattern_upper_bound
+  - universal bound for all patterns
+- R0R1_pattern_bound
+  - specific to R0R1 pattern
+- R0R0_pattern_bound
+  - specific to R0R0 pattern
+  - shows exact equality
+
+## Sequence Properties
+### Validity
+- sequence_prefix_validity
+  - depends on: nth_firstn_helper
+  - enables local analysis
+- sequence_validity_preservation
+  - ensures continuation
+
+### R0 Dominance
+- R0_count_grows_with_length
+  - shows R0 operations dominate
+  - depends on: count_operations
+- R0_dominance_by_chains
+  - proves R0 majority
+- R0_dominance_by_ternary
+  - stronger form of dominance
+
+## Combined Properties
+### Unified Bounds
+- combined_sequence_bound_optimized
+  - unifies all pattern bounds
+  - depends on:
+    - pattern_upper_bound
+    - R0R1_pattern_bound
+    - R0R0_pattern_bound
+- superposition_bound
+  - shows pattern coexistence
+
+### Pattern Continuity
+- R0R1_continuity
+  - ensures valid transitions
+- R1R0_continuity
+  - ensures valid transitions
+- R0R0_continuity
+  - ensures valid transitions
+- R0R0_monotonicity
+  - shows strict growth
+
+## Supporting Lemmas
+### Basic Properties
+- even_or_odd
+  - fundamental parity lemma
+- pow2_gt_0
+  - power of 2 property
+- pow2_monotone
+  - monotonicity of powers
+
+### Sequence Operations
+- nth_sequence_value_0
+  - initial value
+- nth_sequence_value_succ
+  - successor values
+- count_operations
+  - operation counting
