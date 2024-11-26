@@ -1085,6 +1085,74 @@ Proof.
   apply Hseq.
   apply Nat.lt_le_trans with i; auto.
 Qed.
+
+  (* 组合模式数等价于模式计数 *)
+Lemma count_operations_eq : forall ops,
+  let (r0s, r1s) := count_operations ops in
+  r0s = count_R0 ops /\ r1s = count_R1 ops.
+Proof.
+  induction ops as [|op ops' IH].
+  - (* 基础情况：空列表 *)
+    simpl. auto.
+    
+  - (* 归纳步骤 *)
+    destruct op.
+    + (* R0 情况 *)
+      simpl.
+      destruct (count_operations ops') as [r0s' r1s'] eqn:Heq'.
+      destruct IH as [IH1 IH2].
+      split; simpl.
+      * (* r0s = count_R0 *)
+        rewrite IH1. reflexivity.
+      * (* r1s = count_R1 *)
+        rewrite IH2. reflexivity.
+        
+    + (* R1 情况 *)
+      simpl.
+      destruct (count_operations ops') as [r0s' r1s'] eqn:Heq'.
+      destruct IH as [IH1 IH2].
+      split; simpl.
+      * (* r0s = count_R0 *)
+        rewrite IH1. reflexivity.
+      * (* r1s = count_R1 *)
+        rewrite IH2. reflexivity.
+Qed.
+
+(* R0 Counter upper bound R0在序列中的计数上界*)
+
+Theorem R0_count_upper_bound : forall n k ops,
+  valid_input n ->
+  k >= 3 ->
+  length ops = k ->
+  valid_sequence ops n ->
+  let (r0s, r1s) := count_operations ops in
+  r0s <= k.
+Proof.
+  intros n k ops Hvalid Hk_ge_3 Hlen Hseq.
+  destruct (count_operations ops) as [r0s r1s] eqn:Hcount.
+  
+  (* 使用count_sum *)
+  assert (H_sum: r0s + r1s = k).
+  {
+    (* 使用count_operations_eq *)
+    pose proof (count_operations_eq ops) as H_eq.
+    rewrite Hcount in H_eq.
+    destruct H_eq as [H_r0 H_r1].
+    
+    pose proof (count_sum ops) as H.
+    rewrite <- H_r0, <- H_r1 in H.
+    rewrite Hlen in H.
+    exact H.
+  }
+  
+  (* R1操作数量非负 *)
+  assert (H_r1s_nonneg: r1s >= 0) by lia.
+  
+  (* 从H_sum: r0s + r1s = k *)
+  (* 从H_r1s_nonneg: r1s >= 0 *)
+  (* 得到: r0s <= k *)
+  lia.
+Qed.      
 ----------------------------------------------coq uncheck------------
 Lemma power_4_to_2 : forall r1s,
   4^r1s = 2^(2*r1s).
