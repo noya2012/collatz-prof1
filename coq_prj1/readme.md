@@ -64,7 +64,20 @@
 - Forms a complete theoretical framework.
 
 ## 10. Current Main Convergence Proof
-- `R0_count_grows_with_length`: As the sequence length increases, the advantage of R0 operations grows further, marking a significant achievement in our convergence proof. It proves that as the sequence gets longer, the number of X/2 operations in the sequence increases, starting from at least twice the number of R1 operations (3n+1 operations).
+- `R0_count_grows_with_length`: Theorem Significance:
+It is proved that in any sufficiently long Collatz sequence, the number of R0 operations (even steps) must be far greater than the number of R1 operations (odd steps).
+It provides the precise relationship between the number of R0 and R1.
+Quantity Relationship:
+The number of R0 ≥ 2 times the number of R1 + (k - 3), where k is the total length of the sequence.
+This means that as the sequence becomes longer, the advantage of R0 will grow linearly.
+Condition Requirements:
+The sequence length k ≥ 3.
+The input n must be valid (n ≥ 1).
+Theoretical Value:
+It supports the theory of "even step dominance".
+It provides a quantitative description for the overall behavior of the sequence.
+It helps to understand the numerical decreasing trend in the Collatz Conjecture.
+This theorem is an important tool for proving the convergence of the Collatz sequence, as it shows that the even steps (dividing by 2) dominate in the sequence.
 
 ## 11. Numerical Sequence
 ### Sequence Descent Properties (Ongoing Proof)
