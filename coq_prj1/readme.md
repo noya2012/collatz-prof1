@@ -78,7 +78,37 @@ It supports the theory of "even step dominance".
 It provides a quantitative description for the overall behavior of the sequence.
 It helps to understand the numerical decreasing trend in the Collatz Conjecture.
 This theorem is an important tool for proving the convergence of the Collatz sequence, as it shows that the even steps (dividing by 2) dominate in the sequence.
+Let me sort out the main routes to prove the inevitable dominance of R0:
 
+**Basic combination theorems:**
+- collatz_sequence_composition: Prove that any legal input can be decomposed into a binary combination.
+- collatz_ternary_composition: Prove that any legal input can be decomposed into a ternary combination.
+
+**Progressive layers of R0 dominance:**
+- R0_dominance_by_chains: The most basic dominance proof to ensure that R0 > R1.
+- R0_dominance_by_ternary: A strengthened dominance proof to ensure that R0 ≥ 2R1.
+- R0_count_grows_with_length: The strongest dominance proof to ensure that as the sequence length increases, the advantage of R0 will continue to expand.
+
+**Auxiliary supporting theorems:**
+- ternary_min_R0_count: Prove that any ternary combination contains at least one R0.
+- even_3n_plus_1: Prove that after the operation 3n + 1, an even number is necessarily obtained.
+- sequence_validity_preservation: Ensure the validity of the sequence.
+
+**Fundamental reasons for the inevitable dominance of R0:**
+
+**Structural limitations:**
+- The combination of R1R1 is always illegal.
+- R1 must be followed by R0 (because 3n + 1 is necessarily an even number).
+
+**Combination characteristics:**
+- Each ternary combination contains at least one R0.
+- A pure R0 sequence can be constructed, but a pure R1 sequence cannot be constructed.
+
+**Growth properties:**
+- As the sequence length increases, the quantitative advantage of R0 will continuously expand.
+- The growth rate of the advantage is proportional to the sequence length (k - 3).
+
+This advantage is not accidental but an inevitable result determined by the structure of the Collatz problem. This also hints at why the sequence will eventually converge to a smaller number: because the R0 operation (dividing by 2) necessarily has a quantitative advantage.
 ## 11. Numerical Sequence
 ### Sequence Descent Properties (Ongoing Proof)
 - `sequence_descent`: For any valid input greater than 1, there exists an operation sequence that decreases the value.
