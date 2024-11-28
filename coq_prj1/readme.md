@@ -23,7 +23,7 @@ Regarding the 3n+1 Conjecture, here is the progress report for this project.
 - `valid_R0R0_entry_number_produces_d_R0`
 - This group of theorems ensures that we can construct valid sequences of any length, providing tools for studying long-term behavior.
 
-## 4. R0 Operation Dominance Properties (Proven)
+## 4. R0 (n/2) Operation Dominance Properties (Proven)
 - `R0_dominance_by_chains`: In any valid sequence, the number of R0 operations exceeds the number of R1 operations.
 - `R0_dominance_by_ternary`: The count of R0 operations is at least double the count of R1 operations.
 - `R0_count_grows_with_length`: As the sequence length increases, the advantage of R0 operations grows further.
