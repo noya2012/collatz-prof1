@@ -1,4 +1,5 @@
-####"To verify the proofs using Coq IDE 8.9.0, you need to start loading the code from collatz_part_one.v. This file contains all the definitions, lemmas, and main theorems of this analysis framework."
+####"To verify these codes using Coq IDE 8.9.0, you may need to start loading the code from collatz_part_one.v. These files are already cross-linked in the header, ensuring they are in the same directory. Compile them once, and they can be loaded within the directory by referencing each other.
+
 
 Regarding the 3n+1 Conjecture, here is the progress report for this project.
 
