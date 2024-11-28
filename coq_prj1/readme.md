@@ -1,5 +1,7 @@
 ####"To verify the proofs using Coq IDE 8.9.0, you need to start loading the code from collatz_part_one.v. This file contains all the definitions, lemmas, and main theorems of this analysis framework."
 
+Regarding the 3n+1 Conjecture, here is the progress report for this project.
+
 # Abstract of Proven Global Theorems
 
 ## 1. Core Global Theorems
