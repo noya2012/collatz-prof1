@@ -55,7 +55,7 @@ Proof.
   
   (* 使用Hodd *)
   rewrite Hodd.
-  (* 现在目标是证明 3 * n + 1 <= 3 * n + 1 *)
+  (* 证明 3 * n + 1 <= 3 * n + 1 *)
   lia.
 Qed.
 
@@ -94,7 +94,7 @@ Proof.
     contradiction.
 Qed.
 
-(* 首先证明除以2会使值变小的引理 *)
+(* 证明除以2会使值变小的引理 *)
 Lemma div2_decreases : forall n,
   valid_input n ->
   is_even n ->
@@ -134,7 +134,7 @@ Lemma div2_valid : forall n,
 Proof.
   intros n Hvalid Heven.
   unfold valid_input in *.
-  (* 首先证明n >= 2 *)
+  (*证明n >= 2 *)
   assert (H: n >= 2).
   { apply even_ge_1_implies_ge_2; auto. }
   
@@ -203,66 +203,89 @@ Proof.
   reflexivity.
 Qed.
 
+Require Import Nat.
+Require Import Lia.
+
+(* 1. 4的基本性质 *)
+Lemma four_eq_pow2_2 : 4 = 2^2.
+Proof. reflexivity. Qed.
+
+(* 2. 幂的乘法性质  *)
+Lemma pow_mul_r : forall a b c,
+  (a^b)^c = a^(b*c).
+Proof.
+  intros a b c.
+  induction c.
+  - simpl. rewrite Nat.mul_0_r. reflexivity.
+  - simpl.
+    rewrite IHc.
+    rewrite Nat.mul_succ_r.
+    rewrite <- Nat.pow_add_r.
+    f_equal.
+    lia.
+Qed.
+
+(* 3. 幂的分配律 *)
+Lemma pow_distrib : forall a b c,
+  a^(b + c) = a^b * a^c.
+Proof.
+  intros.
+  apply Nat.pow_add_r.
+Qed.
+
+(* 4. 4的幂展开引理 *)
+Lemma pow4_expand : forall k,
+  4^k = 2^(2*k).
+Proof.
+  intro k.
+  rewrite four_eq_pow2_2.
+  rewrite pow_mul_r.
+  reflexivity.
+Qed.
 
 
+
+  (*  序列值严格小于初始值：n * 4^r1s / 2^r0s < n *)
 Theorem value_descent : forall n r0s r1s,
   valid_input n -> n > 1 ->
-  r0s >= 2 * r1s ->
+  r0s > 2 * r1s ->
   n * 4^r1s / 2^r0s < n.
 Proof.
   intros n r0s r1s Hvalid Hgt1 Hr0s.
   
-  (* 前面的断言保持不变 *)
-  assert (H_div2: forall k, 
-    valid_input k -> is_even k -> k > 1 -> k/2 < k).
-  { apply even_div2_descent. }
+  (* 使用4的幂展开引理 *)
+  rewrite pow4_expand.
   
-  assert (H_R0: forall k,
-    valid_input k -> is_even k ->
-    collatz_step k < k).
-  { apply R0_strict_descent. }
+  (* 使用r0s > 2*r1s的条件 *)
+  assert (H_compare: 2*r1s < r0s) by exact Hr0s.
   
-  assert (H_R1: forall k,
-    valid_input k -> is_odd k ->
-    collatz_step k <= 3 * k + 1).
-  { apply R1_bounded_growth. }
-  
-  assert (H_pow2: forall a b,
-    a < b -> 2^a < 2^b).
-  { apply pow2_strict_monotone. }
-  
-  (* 修改这部分证明 *)
-  assert (H_key: 2^(2*r1s) <= 2^r0s).
+  (* 使用幂的单调性 *)
+  assert (H_pow_mono: 2^(2*r1s) < 2^r0s).
   {
-    apply Nat.pow_le_mono_r.
-    - discriminate.  (* 证明 2 <> 0 *)
-    - exact Hr0s.
+    apply pow2_strict_monotone.
+    exact H_compare.
   }
   
-  (* 其余部分保持不变 *)
-  assert (H_pow4: forall k, 4^k = 2^(2*k)).
-  {
-    intros k. induction k.
-    - simpl. reflexivity.
-    - simpl. rewrite IHk.
-      rewrite Nat.mul_succ_l.
-      rewrite Nat.mul_2_r.
-      reflexivity.
+  (* 证明2^r0s > 0 *)
+  assert (H_pow_pos: 2^r0s > 0).
+  { apply pow2_gt_0. }
+  
+  (* 证明2^r0s <> 0 *)
+  assert (H_pow_neq_0: 2^r0s <> 0).
+  { 
+    apply Nat.neq_0_lt_0.
+    exact H_pow_pos.
   }
   
-  rewrite H_pow4.
-  
+  (* 使用除法的性质 *)
   apply Nat.div_lt_upper_bound.
-  - apply pow2_gt_0.
-  - rewrite <- Nat.mul_assoc.
-    assert (H_strict: 2^r0s > 2^(2*r1s)).
-    {
-      apply H_pow2.
-      apply Nat.lt_le_trans with (2 * r1s).
-      - apply Nat.lt_succ_diag_r.
-      - exact Hr0s.
-    }
-    apply Nat.mul_lt_mono_pos_l.
-    + exact Hgt1.
-    + exact H_strict.
+  - exact H_pow_neq_0.
+  - (* 处理不等式 *)
+    rewrite Nat.mul_comm.
+    apply Nat.mul_lt_mono_pos_r.
+    + (* 证明 0 < n *)
+      apply Nat.lt_trans with 1.
+      * apply Nat.lt_0_1.
+      * exact Hgt1.
+    + exact H_pow_mono.
 Qed.
