@@ -115,7 +115,7 @@ This advantage is not accidental but an inevitable result determined by the stru
 ## 11. Numerical Sequence
 ### Sequence Descent Properties (Ongoing Proof)
 - `sequence_descent`: For any valid input greater than 1, there exists an operation sequence that decreases the value.
-- `value_descent`: When the number of R0 operations is sufficiently greater than the number of R1 operations, the sequence value will decrease.
+- `value_descent`:(finished) When the number of R0 operations is sufficiently greater than the number of R1 operations, the sequence value will decrease.
 - `sequence_descent` serves as the core theorem, directly supporting the argument that sequences will eventually converge to 1.
 
 -
