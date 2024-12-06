@@ -104,7 +104,7 @@ For any questions or inquiries, please reach out to the project maintainer:
 
 Thank you for your interest in The Combinatorial Analysis Framework of the 3N + 1 Conjecture - COQ Formalization Project!
 ## Links
--zulip https://caf3np1.zulipchat.com/join/o7x6krw77psfytm74b3ihq2h/
+-zulip [https://caf3np1.zulipchat.com/join/o7x6krw77psfytm74b3ihq2h/](https://caf3np1.zulipchat.com/)
 
 -Other Recommended Formalization Projects
 
