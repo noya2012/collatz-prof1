@@ -67,21 +67,6 @@ Regarding the 3n+1 Conjecture, here is the progress report for this project.
 - Forms a complete theoretical framework.
 
 ## 10. Current Main Convergence Proof
-- `R0_count_grows_with_length`: Theorem Significance:
-It is proved that in any sufficiently long Collatz sequence, the number of R0 operations (even steps) must be far greater than the number of R1 operations (odd steps).
-It provides the precise relationship between the number of R0 and R1.
-Quantity Relationship:
-The number of R0 ≥ 2 times the number of R1 + (k - 3), where k is the total length of the sequence.
-This means that as the sequence becomes longer, the advantage of R0 will grow linearly.
-Condition Requirements:
-The sequence length k ≥ 3.
-The input n must be valid (n ≥ 1).
-Theoretical Value:
-It supports the theory of "even step dominance".
-It provides a quantitative description for the overall behavior of the sequence.
-It helps to understand the numerical decreasing trend in the Collatz Conjecture.
-This theorem is an important tool for proving the convergence of the Collatz sequence, as it shows that the even steps (dividing by 2) dominate in the sequence.
-Let me sort out the main routes to prove the inevitable dominance of R0:
 
 **Basic combination theorems:**
 - collatz_sequence_composition: Prove that any legal input can be decomposed into a binary combination.
@@ -109,13 +94,13 @@ Let me sort out the main routes to prove the inevitable dominance of R0:
 
 **Growth properties:**
 - As the sequence length increases, the quantitative advantage of R0 will continuously expand.
-- The growth rate of the advantage is proportional to the sequence length (k - 3).
+
 
 This advantage is not accidental but an inevitable result determined by the structure of the Collatz problem. This also hints at why the sequence will eventually converge to a smaller number: because the R0 operation (dividing by 2) necessarily has a quantitative advantage.
 ## 11. Numerical Sequence
 ### Sequence Descent Properties (Ongoing Proof)
 - `sequence_descent`: For any valid input greater than 1, there exists an operation sequence that decreases the value.
-- `value_descent`:(finished) When the number of R0 operations is sufficiently greater than the number of R1 operations, the sequence value will decrease.
+- `value_descent`: When the number of R0 operations is sufficiently greater than the number of R1 operations, the sequence value will decrease.
 - `sequence_descent` serves as the core theorem, directly supporting the argument that sequences will eventually converge to 1.
 
 -
