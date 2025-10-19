@@ -1,1 +1,1 @@
-####"To verify these codes using Coq IDE 8.9.0, you may need to start loading the code from collatz_part_one.v. These files are already cross-linked in the header, ensuring they are in the same directory. Compile them .
+####"To verify these codes using Coq IDE 8.10.2, you may need to start loading the code from collatz_part_one.v. These files are already cross-linked in the header, ensuring they are in the same directory. Compile them .
