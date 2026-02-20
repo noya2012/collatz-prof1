@@ -5,6 +5,7 @@
 Welcome to this 3n+1 Analysis Framework Formalization Project,
 As indicated in the title, this is a project that studies the 3n + 1 conjecture
 using combinatorial methods and conducts formal verification in the form of Coq code.
+（The current project has been archived. For the latest project progress, please visit https://github.com/noya2012/collatz-formalization-coq）
 
 The main formalization code is located in the /coq_prj1/ directory.
 
