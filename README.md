@@ -5,9 +5,11 @@
 Welcome to this 3n+1 Analysis Framework Formalization Project,
 As indicated in the title, this is a project that studies the 3n + 1 conjecture
 using combinatorial methods and conducts formal verification in the form of Coq code.
-（The current project has been archived. For the latest project progress, please visit https://github.com/noya2012/collatz-formalization-coq）
+（The collatz-prof1 project has been archived. For the latest project progress, please visit https://github.com/noya2012/collatz-formalization-coq）
+A comprehensive Coq formalization of the Collatz conjecture with a combinatorial analysis framework. Proves linear division advantage.
+https://github.com/noya2012/collatz-formalization-coq
+The main formalization code is located in the /collatz-formalization-coq/ directory.
 
-The main formalization code is located in the /coq_prj1/ directory.
 
 ## Overview
 The Collatz Conjecture, also known as the Hailstone Conjecture, is an unsolved mathematical problem, and its difficulty
