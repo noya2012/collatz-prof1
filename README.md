@@ -2,13 +2,17 @@
 ```markdown
 # The Combinatorial Analysis Framework of the 3N + 1 Conjecture - COQ Formalization Project
 
-Welcome to this 3n+1 Analysis Framework Formalization Project,
-As indicated in the title, this is a project that studies the 3n + 1 conjecture
-using combinatorial methods and conducts formal verification in the form of Coq code.
-（The collatz-prof1 project has been archived. For the latest project progress, please visit https://github.com/noya2012/collatz-formalization-coq）
-A comprehensive Coq formalization of the Collatz conjecture with a combinatorial analysis framework. Proves linear division advantage.
-https://github.com/noya2012/collatz-formalization-coq
-The main formalization code is located in the /collatz-formalization-coq/ directory.
+Welcome to the **3n+1 Analysis Framework Formalization Project**!
+
+This project studies the 3n+1 conjecture using combinatorial methods and conducts formal verification in Coq.
+
+> **Note**: The `collatz-prof1` project has been archived. For the latest project progress, please visit: [collatz-formalization-coq](https://github.com/noya2012/collatz-formalization-coq)
+
+This is a comprehensive Coq formalization of the Collatz conjecture with a combinatorial analysis framework that proves linear division advantage.
+
+**Project Repository**: [https://github.com/noya2012/collatz-formalization-coq](https://github.com/noya2012/collatz-formalization-coq)
+
+The main formalization code is located in the `/collatz-formalization-coq/` directory.
 
 
 ## Overview
@@ -73,14 +77,29 @@ and preservation theorem, and the principle of the increasing number of R0 opera
 To get started with the project, follow these steps:
 
 1. **Prerequisites**: Ensure you have Coq and any necessary dependencies installed on your system.
-2. **Clone the Repository**: Clone this repository to your local machine using the following command:
-   ```
-   git clone https://github.com/noya2012/collatz-prof1.git
-   ```
+2. **Clone the Repository**: Choose the appropriate repository based on your needs:
+   
+   - **For Original Research**: If you want to explore the original research and archived work:
+     ```
+     git clone https://github.com/noya2012/collatz-prof1.git
+     ```
+   
+   - **For Latest Progress**: If you want to follow the latest developments and active formalization:
+     ```
+     git clone https://github.com/noya2012/collatz-formalization-coq.git
+     ```
 3. **Compile the Project**: Navigate to the project directory and compile the Coq files using the Coq compiler.
 
 ## Directory Structure
+
+### Archived Repository (collatz-prof1)
+```
 /coq_prj1
+```
+
+### Active Repository (collatz-formalization-coq)
+For the latest project structure and active development, visit:
+[https://github.com/noya2012/collatz-formalization-coq](https://github.com/noya2012/collatz-formalization-coq)
 
 
 ## Contributing
